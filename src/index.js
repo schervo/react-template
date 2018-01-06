@@ -30,7 +30,7 @@ window.onload = () => {
 
 ReactDOM.render(
   <Provider store={store}>
-  <MuiThemeProvider muiTheme={getMuiTheme()}>
+  <MuiThemeProvider theme={getMuiTheme()}>
     <Router>
       <Routes />
     </Router>

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import Cn from 'classnames'
 
 import RequireAuth from '../../shared/RequireAuth'
-import img from '../../../styles/images.css'
-import sprites from '../../../styles/sprites.css'
 import css from './Home.style.css'
 import type { ReduxProps } from './'
+
+
 
 type Props = ReduxProps & {
   history: Object,
@@ -41,10 +41,8 @@ class Home extends PureComponent<Props> {
           <li>This is a test item</li>
         </ul>
         <Link to="/profile">
-          <div className={Cn(img.logo, css.link)} />
         </Link>
         <Link to="/todos">
-          <div className={Cn(sprites.facebookIcon, css.link)} />
         </Link>
         <RequireAuth>
           <button onClick={this.handleLogout}>Logout</button>

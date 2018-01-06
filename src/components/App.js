@@ -7,6 +7,8 @@ import LoadingIndicator from './shared/LoadingIndicator'
 import ErrorMessage from './shared/ErrorMessage'
 import vars from '../config/variables'
 import type { ReduxProps } from './'
+import AppContent from './AppContent'
+import './App.style.css'
 
 
 type Props = ReduxProps & {
@@ -54,8 +56,9 @@ const App = (props: Props) => {
       />
       <LoadingIndicator />
 
-      {props.children}
-
+      <AppContent>
+        {props.children}
+      </AppContent>
       <ErrorMessage />
       <Modal />
     </div>
