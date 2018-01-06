@@ -1,8 +1,8 @@
 // @flow
 import { removeAuthToken, setAuthToken } from '../../../helpers/auth'
-import { loginMock as loginAPI, logoutMock as logoutAPI } from './api'
+import { loginMock as loginAPI, logout as logoutAPI, isAuth as isAuthAPI } from './api'
 import type { LoginParams } from './types'
-import { LOGIN, LOGOUT } from './consts'
+import { LOGIN, LOGOUT, AUTH } from './consts'
 
 // ACTION CREATORS
 // Use redux-promise-middleware
@@ -33,3 +33,9 @@ export const logout = (history: Object, redirect: ?string): GlobalThunkAction =>
     return dispatch({ type: LOGOUT, payload: logoutAPI() })
 
   }
+
+export const isAuth = (): GlobalThunkAction =>
+  (dispatch: GlobalDispatch<*>) => dispatch({
+    type: AUTH,
+    payload: isAuthAPI(),
+  })

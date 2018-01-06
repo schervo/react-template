@@ -6,6 +6,7 @@ const initialState: AuthState = {
   token: '',
   error: '',
   isFetching: false,
+  isAuth: false
 }
 
 export default initialState

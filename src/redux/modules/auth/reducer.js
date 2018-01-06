@@ -1,13 +1,15 @@
 // @flow
 // import Debug from 'debug'
 import get from 'lodash/get'
-import { LOGIN, LOGOUT } from './consts'
+import { LOGIN, LOGOUT, AUTH } from './consts'
 import initialState from './initialState'
 import type { AuthState } from './types'
 
 // const log = Debug('my-app:redux:modules:auth')
 
 function reducer (state: AuthState = initialState, action: GlobalFSA<any>) {
+
+  console.log(action.type);
 
   switch (action.type) {
 
@@ -55,6 +57,26 @@ function reducer (state: AuthState = initialState, action: GlobalFSA<any>) {
         // Always logout!
         token: '',
         error: action.payload,
+        isFetching: false,
+      }
+    case `${AUTH}_PENDING`:
+      return {
+        ...state,
+        isAuth: false,
+        isFetching: true,
+      }
+
+    case `${AUTH}_FULFILLED`:
+      return {
+        ...state,
+        isAuth: true,
+        isFetching: false,
+      }
+
+    case `${AUTH}_REJECTED`:
+      return {
+        ...state,
+        isAuth: false,
         isFetching: false,
       }
 

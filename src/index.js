@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import configureStore from './redux/store'
 import { loadSuccess } from './redux/modules/init/actions'
+import { isAuth } from './redux/modules/auth/actions'
 import vars from './config/variables'
 
 import Routes from './routes'
@@ -20,6 +21,8 @@ const store = configureStore()
 window.onload = () => {
 
   store.dispatch(loadSuccess())
+
+  store.dispatch(isAuth())
 
   window.onload = null
 

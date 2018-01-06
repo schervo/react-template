@@ -33,7 +33,7 @@ export const setItem = async function setItem (
 
 export const getItem = async function getItem (key: string) {
 
-  const value: ?string = await Cookies.get(key)
+  const value: ?string = await localStorage.getItem(key)
   if (value) return deserialize(value)
   return value
 

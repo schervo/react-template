@@ -4,6 +4,7 @@ export type AuthState = {
   token: ?string,
   error: ?string,
   isFetching: boolean,
+  isAuth: boolean
 }
 
 export type LoginParams = {
