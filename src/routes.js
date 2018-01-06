@@ -31,10 +31,10 @@ const Routes = ({isFetching,isAuth}) => {
         <Switch>
 
           {/* Example Routes */}
-          <PrivateRoute exact path="/home" isAuth={isAuth} component={Home} />
+          <PrivateRoute exact path="/" isAuth={isAuth} component={Home} />
           {/* <Route exact path="/profile" component={Profile} />
           <Route exact path="/todos" component={Todos} /> */}
-          <Redirect exact from="/" to="/home" />
+          {/* <Redirect exact from="/" to="/home" /> */}
 
           {/* 404 */}
           <Route component={NotFound} />

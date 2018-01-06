@@ -30,6 +30,7 @@ const styles = theme => ({
   },
   appBar: {
     position: 'absolute',
+    backgroundColor: theme.palette.primary['A200'],
     marginLeft: drawerWidth,
     [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${drawerWidth}px)`,

@@ -55,7 +55,7 @@ const App = (props: Props) => {
         ]}
       />
       <LoadingIndicator />
-
+      
       <AppContent>
         {props.children}
       </AppContent>
