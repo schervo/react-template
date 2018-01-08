@@ -57,6 +57,12 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
 // injected into the application via DefinePlugin in Webpack configuration.
 const REACT_APP = /^REACT_APP_/i;
 
+const {
+  USE_MOCK_API,
+  API_URL,
+  ROOT_URL
+} = process.env
+
 function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
     .filter(key => REACT_APP.test(key))
@@ -69,7 +75,12 @@ function getClientEnvironment(publicUrl) {
         // Useful for determining whether we’re running in production mode.
         // Most importantly, it switches React into the correct mode.
         NODE_ENV: process.env.NODE_ENV || 'development',
-        USE_MOCK_API: process.env.USE_MOCK_API || false,
+
+        //App settings
+        USE_MOCK_API: USE_MOCK_API || false,
+        API_URL: API_URL || 'https://api.randomuser.me',
+        ROOT_URL: ROOT_URL || 'http://localhost:3000',
+
         // Useful for resolving the correct path to static assets in `public`.
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put
